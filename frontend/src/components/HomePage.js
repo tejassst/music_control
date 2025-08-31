@@ -13,11 +13,9 @@ function HomePage(props) {
   return (
     <Router>
       <Routes>
-        <Route path="/">
-          <p>This is the home page</p>
-        </Route>
-        <Route path="/join" element={RoomJoinPage} />
-        <Route path="/create" element={CreateRoomPage} />
+        <Route path="/" element={<p>This is the home page</p>} />
+        <Route path="/join" element={<RoomJoinPage />} />
+        <Route path="/create" element={<CreateRoomPage />} />
       </Routes>
     </Router>
   );
