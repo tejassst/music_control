@@ -1,12 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
+import HomePage from './HomePage';
+import RoomJoinPage from './RoomJoinPage';
+import CreateRoomPage from './CreateRoomPage';
 
-function App() {
-  return <h1>Testing React code</h1>;
+function App(props) {
+  return (
+    <div>
+      <HomePage />
+    </div>
+  );
 }
 
 const appDiv = document.getElementById('app');
 const root = createRoot(appDiv);
-root.render(<App />);
+root.render(<App name="Hello" />);
 
 export default App;

@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -19,6 +20,12 @@ module.exports = {
     ],
   },
   optimization: {
-    minimize: true,
+    minimize: false,
   },
+  devServer: {
+    static: path.join(__dirname, './static/frontend'),
+    hot: true,
+    port: 3001, // choose a different port than Django
+  },
+  plugins: [new LiveReloadPlugin()],
 };
